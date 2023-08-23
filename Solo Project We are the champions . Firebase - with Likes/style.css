@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --color-1: #FFFBF6;
+    --color-2: #673824;
+    --color-3: #CBAB98;
+    --color-4: #1A1113;
+    --color-5: #553659;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #1A1113;
+}
+
+.app {
+    width: 100%;
+    background: #1A1113;
+    color: #FFFBF6;
+    padding: 1rem 0;
+}
+
+.container {
+    flex-direction: column;
+    max-width: 350px;
+    /* border: 3px solid white; */
+    margin: 0 auto;
+}
+
+.img-container {
+    margin: 3rem 0 1rem;
+    position: relative;
+    z-index: 0;
+    left: -2rem;
+}
+
+.icon {
+    position: relative;
+    width: 250px;
+    z-index: 5;
+}
+
+.img-container::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #FFFBF6;
+    top: 50%;
+    left: 60%;
+    transform: translate(-30%, -50%);
+    box-shadow: 0 0 110px #FFFBF6,
+        0 0 120px #FFFBF6,
+        0 0 130px #FFFBF6,
+        0 0 140px #FFFBF6;
+    z-index: 1;
+}
+
+.title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    width: 90%;
+    text-align: center;
+    color: #FFFBF6;
+}
+
+.list-title {
+    font-size: 1.1rem;
+    margin: 1rem 0;
+}
+
+#endorsement {
+    width: 100%;
+    margin-bottom: 5px;
+    min-height: 100px;
+    padding: 10px;
+    resize: vertical;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border-radius: 8px;
+    color: #000;
+    font-weight: 500;
+    font-size: 15px;
+    background: #CBAB98;
+    border: none;
+}
+
+.box {
+    width: 100%;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+#from,
+#to {
+    background: #CBAB98;
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 8px;
+    width: 100%;
+    height: 30px;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+}
+
+#publish {
+    width: 100%;
+    height: 45px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    background: #673824;
+    color: #FFFBF6;
+    z-index: 2;
+}
+
+#publish span {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transition: 0.4s;
+}
+
+#publish:hover span {
+    color: #673824;
+}
+
+#publish .hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #FFFBF6;
+    color: #000;
+    z-index: -1;
+    transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    transform: scaleX(0);
+    transform-origin: right center;
+}
+
+#publish:hover .hover {
+    transform: scaleX(1);
+    transform-origin: left center;
+    transition-duration: 0.8s;
+}
+
+.list {
+    flex-direction: column-reverse;
+    width: 100%;
+}
+
+.list-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 15px;
+    background: #553659;
+    margin-bottom: 5px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.sender {
+    align-self: flex-end;
+}
+
+.reciever, .sender {
+    font-weight: 700;
+    color: #1A1113;
+    text-transform: capitalize;
+    font-size: 14px;
+}
+
+.comment {
+    font-size: 13px;
+    font-weight: 400;
+    align-self: center;
+    margin-block: 10px;
+}
+
+.likes {
+    position: absolute;
+    bottom: 9px;
+    left: 10px;
+    z-index: 5;
+    /* background: #000; */
+    /* border: 1px solid #000; */
+    padding-inline: 6px;
+    height: fit-content;
+    justify-content: space-between;
+}
+
+.likes-icon, .likes-num {
+    font-size: 14px;
+}
+
+.likes-icon {
+    margin-right: 5px;
+}
+
+
+/* Media Query for Tablets and Small Laptops */
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%; /* Adjust the container width as needed */
+    }
+
+    .title {
+        font-size: 1.3rem; /* Adjust the title font size for smaller screens */
+    }
+
+    #endorsement {
+        font-size: 14px; /* Adjust the textarea font size for smaller screens */
+    }
+
+    .box {
+        flex-direction: column; /* Adjust the input box layout for smaller screens */
+    }
+
+    #from,
+    #to {
+        font-size: 14px; /* Adjust the input font size for smaller screens */
+    }
+
+    #publish {
+        height: 40px; /* Adjust the button height for smaller screens */
+    }
+
+    #publish span {
+        font-size: 20px; /* Adjust the button text font size for smaller screens */
+    }
+
+    .list-item {
+        padding: 8px 12px; /* Adjust the endorsement item padding for smaller screens */
+    }
+
+    .reciever,
+    .sender {
+        font-size: 12px; /* Adjust the sender/receiver font size for smaller screens */
+    }
+
+    .comment {
+        font-size: 11px; /* Adjust the comment font size for smaller screens */
+    }
+}
+
+/* Media Query for Mobile Phones */
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.2rem; /* Further adjust the title font size for smaller screens */
+    }
+
+    #endorsement {
+        font-size: 13px; /* Further adjust the textarea font size for smaller screens */
+    }
+
+    #from,
+    #to {
+        font-size: 13px; /* Further adjust the input font size for smaller screens */
+    }
+
+    #publish span {
+        font-size: 18px; /* Further adjust the button text font size for smaller screens */
+    }
+
+    .list-item {
+        padding: 6px 10px; /* Further adjust the endorsement item padding for smaller screens */
+    }
+
+    .reciever,
+    .sender {
+        font-size: 10px; /* Further adjust the sender/receiver font size for smaller screens */
+    }
+
+    .comment {
+        font-size: 10px; /* Further adjust the comment font size for smaller screens */
+    }
+}
